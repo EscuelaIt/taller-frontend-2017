@@ -1,0 +1,22 @@
+{
+  "name": "imgmin",
+  "version": "1.0.0",
+  "description": "Tareas de automatización Gulp para reducir el tamaño de las imágenes",
+  "main": "gulpfile.js",
+  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-image-resize": "^0.7.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-imageoptim": "^0.3.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-sprite": "^1.2.16",
+    "gulp-svg2png": "^0.3.0",
+    "gulp-svgmin": "^1.2.0",
+    "gulp-webp": "^2.3.0",
+    "imagemin-pngquant": "^4.2.0"
+  }
+}

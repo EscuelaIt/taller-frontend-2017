@@ -1,0 +1,110 @@
+mixin menu(url, name)
+	li #[a(href=`${url}`) #{name}]
+mixin pic(name, ext)
+	picture
+		source(srcset=`img/webp/${name}.webp`, type="image/webp")
+		img(src=`img/${name}.${ext}`)
+mixin youtube(id)
+	iframe.youtube(src=`https://www.youtube.com/embed/${id}`, frameborder="0", allowfullscreen)
+
+doctype html
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		title= title
+		link( rel="shortcut icon", type="image/png", href="img/favicon.png" )
+		// build:css css/estilos.min.css 
+		each css in files.CSS
+			link(rel="stylesheet", href=`../${css}`)
+		// endbuild 
+	body
+		header.container-full.header.center
+			nav.container.nav
+				ul.item
+					+menu('#maraton', 'Maratón')
+					+menu('#mito', 'Mito')
+					+menu('#olimpico', 'Olímpico')
+					li
+						+pic('logo-maraton', 'png')
+					+menu('#mayores', 'Mayores')
+					+menu('#top-ten', 'Top Ten')
+					+menu('#inspirate', 'Inspírate')
+		section#maraton.container.section
+			h1.title.center.animated.wow.zoomIn= title
+			article.item.ph12.lg8.mauto.animated.wow.fadeInRightBig
+				p Cada día, mas personas deciden participar de un maratón y si bien la mayoría cree que consiste en correr <b>42 kilómetros</b>, lo cierto es que la distancia oficial para esta competencia es de <b>42.195 metros</b> (<b>26.2 millas</b>).
+				p Al descubrir esto, la mayoría de los corredores se preguntan ¿cuál es origen de este número tan extraño? ¿por que hay que correr 195 metros extras a los 42 kilómetros?
+				p Si tienes esta duda, a continuación te contaremos como fue el origen de esta competencia tan amada y temida por la mayoría de los corredores.
+				+pic('maraton-intro', 'jpg')
+		section#mito.container.section
+			h2.title.center.animated.wow.zoomIn El Mito Griego
+			article.item.ph12.lg8.mauto.animated.wow.fadeInLeftBig
+				p El mito dice que el nombre Maratón proviene de la leyenda de <b>Filípides</b>, un mensajero griego, que habría sido enviado desde la bahía de Maratón a la metropolis de Atenas con el objetivo de anunciar la victoria de los griegos frente a los persas en la <b>Batalla de Maratón</b> (<b>490 AC</b>).
+				p La distancia que existe entre Maratón y Atenas, es de aproximadamente 40 kilómetros y este mensajero debió recorrerla velozmente, ya que si no llegaba a tiempo, los atenienses iban a quemar la ciudad y matar a los niños ante la creencia de haber sido derrotados en la Batalla.
+				+pic('marathon-atenas', 'jpg')
+				p Afortunadamente, Filípides habría logrado la hazaña, y luego de correr los 40 kilómetros con sus últimas fuerzas, se habría desplomado frente a Atenas ante el grito de <b><i>nenikhamen o nike</i></b>, que significa <b><i>“hemos vencido”</i></b>.
+				+pic('phidippides', 'jpg')
+				p Sin embargo, aunque la leyenda es muy bonita, existen algunos debates sobre la precisión de estos hechos, ya que existirían registros de que Filípides habría corrido, antes de la Batalla de Maratón, desde Atenas hasta Esparta (aprox. 240 km) a fin de solicitar refuerzos y luego volvió.
+				+pic('atenas-sparta', 'jpg')
+		section#olimpico.container.section
+			h2.title.center.animated.wow.zoomIn Maratón Olímpico
+			article.item.ph12.lg8.mauto.animated.wow.fadeInRightBig
+				+pic('aros-olimpicos', 'jpg')
+				p En los primeros Juegos Olímpicos modernos celebrados en <b>Atenas</b> en  <b>1896</b>, los Organizadores buscaban un gran evento que recordara la gloria de la Grecia antigua y surgió la idea del mito de Filípides y la Batalla de Maratón; es así como esta prueba formaría parte del programa de atletismo en los Juegos Olímpicos desde ese momento en la categoría varonil y 88 años después en los <b>Ángeles 1984</b> para la rama femeníl.
+				p En los primeros Juegos Olímpicos modernos celebrados en <b>Atenas</b> en  <b>1896</b>, los Organizadores buscaban un gran evento que recordara la gloria de la Grecia antigua y surgió la idea del mito de Filípides y la Batalla de Maratón; es así como esta prueba formaría parte del programa de atletismo en los Juegos Olímpicos desde ese momento en la categoría varonil y 88 años después en los <b>Ángeles 1984</b> para la rama femeníl.
+				p El primer maratón olímpico se realizó el <b>10 de abril de 1896</b> y su ganador fue <b>Spyridon Louis</b>, un griego que corrió desde la llanura de Maratón hasta el estadio olímpico de Atenas (<b>40 kms</b>) en <b>2:58:50 hrs</b>.
+				p Sin embargo, la distancia fue variando a lo largo de los años, dependiendo del circuito que se utilizaba, hasta que en 1908 en los Juegos Olímpicos de Londres fue modificada para que la Reina pudiera ver la salida desde el Castillo Windsor los organizadores se vieron obligados a extender la distancia a los extraños <b>42.195 metros</b> (<b>26.2 millas</b>).
+				+pic('maraton-londres-1908', 'jpg')
+				p Finalmente, en 1921 la Asociación Internacional de Federaciones Atléticas fijó en forma definitiva que, la maratón consistiría en 42.195 metros o 26.2 millas.
+				+pic('keep-calm', 'jpg')
+		section#mayores.container.section
+			h2.title.center.animated.wow.zoomIn Maratones Mayores
+			article.item.ph12.lg8.mauto.animated.wow.fadeInLeftBig
+				p Los #[a(href="https://www.worldmarathonmajors.com/", target="_blank") World Marathon Majors] son una competición internacional que agrupa, desde 2006, a los seis maratones más prestigiosos del mundo:
+				div.owl-carousel
+					div
+						+pic('berlin-logo', 'png')
+					div
+						+pic('boston-logo', 'png')
+					div
+						+pic('chicago-logo', 'png')
+					div
+						+pic('awmm-medalla', 'jpg')
+					div
+						+pic('londres-logo', 'png')
+					div
+						+pic('new-york-logo', 'png')
+					div
+						+pic('tokyo-logo', 'png')
+				ul
+					li #[a(href="http://www.bmw-berlin-marathon.com/en", target="_blank") #[b Maratón de Berlín:]] congrega a unos 40 000 corredores. La primera edición fue en 1973. Se realiza en septiembre.
+					li #[a(href="http://www.baa.org/", target="_blank") #[b Maratón de Boston:]] es el más antiguo de los maratones anuales; data del año 1896. Cada abril se espera a 22 000 participantes. Se conoce como el maratón de los maratonistas, ya que para poder inscribirse es necesario acreditar un determinado tiempo de acuerdo con la edad del participante, conseguido en un maratón internacional en el año previo, aunque ya existen otras formas de registro sin necesidad de dar los tiempos.
+					li #[a(href="https://www.chicagomarathon.com/", target="_blank") #[b Maratón de Chicago:]] cada octubre se esperan 50 000 corredores. La primera vez que se realizó fue en 1977.
+					li #[a(href="https://www.virginmoneylondonmarathon.com/", target="_blank") #[b Maratón de Londres:]] reúne a 49 000 participantes. Su primera edición data del año 1981. Se celebra en abril.
+					li #[a(href="http://www.tcsnycmarathon.org/", target="_blank") #[b Maratón de Nueva York:]] es una de las más masivas; anualmente participan unas 50 000 personas. La primera edición fue en el año 1970, con 127 corredores. Usualmente se corre en noviembre de cada año.
+					li #[a(href="http://www.marathon.tokyo/en/", target="_blank") #[b Maratón de Tokio:]] Es la maratón mayor más moderna, creada en 2007, se corre a finales de febrero.
+		section#top-ten.container.section
+			h2.title.center.animated.wow.zoomIn #[i.fa.fa-trophy] Top Ten #[i.fa.fa-trophy]
+			article.item.ph12.lg8.mauto.animated.wow.fadeInRightBig
+				h3.center #[i.fa.fa-female] Femenil
+				+pic('top-ten-femenil', 'png')
+				h3.center #[i.fa.fa-male] Varonil
+				+pic('top-ten-varonil', 'png')
+				h3.center #[i.fa.fa-bolt] Dennis Kimeto El hombre más rápido del mundo #[i.fa.fa-bolt]
+				+youtube('NYu4hbksOBg')
+		section#inspirate.container.section
+			h2.title.center.animated.wow.zoomIn Inspírate
+			article.item.ph12.lg8.mauto.animated.wow.fadeInLeftBig
+				h3.center Esos locos que corren 
+				+youtube('FMB64p11bxs')
+				h3.center A World Transformed 
+				+youtube('lOCFYBvpJ6s')
+				h3.center Maratón CDMX
+				+youtube('Fxl0SXLzi_I')
+				h3.center Héroe por un día 
+				+youtube('3sFR6svhS8g')
+		// build:js js/codigos.min.js
+		each js in files.JS
+			script(src=`../${js}`)
+		// endbuild 

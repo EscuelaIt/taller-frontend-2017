@@ -1,0 +1,14 @@
+/* JonMirCha - Web Instructor & Front end Architect - http://jonmircha.com */
+
+/* TEAM */
+	Design and Programming: Jonathan MirCha
+	Contact: jonmircha [at] gmail.com
+	Twitter: @jonmircha
+	From: Mexico City, México
+
+/* SITE */
+	Last update: 2016/09/02
+	Language: Español/English
+	Standars: HTML5, CSS3, JavaScript, Node.js, NPM
+	Components: animate.css, font-awesome, jquery, owl.carousel, responsimple, wowjs, babel-preset-es2015, browser-sync, gulp, gulp-autoprefixer, gulp-babel, gulp-clean-css, gulp-concat, gulp-htmlmin, gulp-imagemin, gulp-pug, gulp-sass, gulp-svgmin, gulp-uglify, gulp-uncss, gulp-useref, gulp-webp, imagemin-pngquant, onchange, parallelshell
+	Software: SublimeText, Chrome, Windows 10
