@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Taller de Automatización y Optimización Front end por @jonmircha</title>
+	<meta name="description" content="Esta presentación contiene toda la teoría del Taller de Automatización y Optimización Front end 2017 de Escuela IT">
+	<meta name="author" content="Jonathan MirCha">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="shortcut icon" type="image/png" href="http://escuela.it/wp-content/themes/escuelait/img/favicon.ico">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="corner c-tl"><img src="img/escuela-it.png" alt="Escuela IT" style="max-width: 90%;"></div>
+	<div class="corner c-tr"><img src="img/automatizacion-optimizacion-frontend.jpg" alt="Taller de Automatización y Optimización Front end" style="max-height: 80px;"></div>
+	<div class="corner c-bl"><p><img src="http://bextlan.com/img/jonmircha.jpg" style="max-width: 50px; border-radius:100%;"> <span>Jonathan MirCha - @jonmircha</span></p></div>
+	<div class="corner c-br"><p>Taller de Automatización y Optimización Front end</p></div>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Automatización y Optimización<br>Front end</h1>
+				<p>por <a href="http://jonmircha.com/" target="_blank">@jonmircha</a></p>
+				<p>en <a href="https://escuela.it/cursos/taller-automatizacion-optimizacion-frontend" target="_blank">Escuela IT</a></p>
+			</section>
+			<section>
+				<figure>
+					<figcaption>
+						<a href="http://jonmircha.com" target="_blank">Jonathan MirCha</a><br>
+						<b>Instructor Web & Front end Devsignloper.</b><br>
+						Entusiasta de la educación digital.
+						Dirijo <a href="http://bextlan.com" target="_blank">Bextlán</a>.<br>
+						Maratonista(x10) Fitness. <a href="http://www.celiacos.org/enfermedad-celiaca.html" target="_blank">Celiaco</a> por amor.
+					</figcaption>
+					<img src="http://bextlan.com/img/jonmircha.jpg" style="height: auto; max-width: 400px;"></a>
+				</figure>
+			</section>
+			<section>
+				<h2>Temas:</h2>
+				<ol>
+					<li><a href="#/">Inicio</a></li>
+					<li><a href="#/3">Historia del Front end</a></li>
+					<li><a href="#/34">CLI, Editores & IDEs</a></li>
+					<li><a href="#/41">Git & GitHub</a> | <a href="#/64">Git + GitHub</a></li>
+					<li><a href="#/73">Metalenguajes Front end</a> y <a href="#/80">Gestores de Tareas</a></li>
+					<li><a href="#/85">Node.js</a> y <a href="#/99">NPM</a></li>
+					<li><a href="#/116">NPM Scripts vs Task Runners</a></li>
+					<li><a href="#/131">Identificando Tareas Front end</a></li>
+					<li><a href="#/135">Workflow Front end</a></li>
+					<li><a href="#/138">Workflow Back end</a></li>
+				</ol>
+			</section>
+			<section>
+				<h2>Historia del Front end</h2>
+			</section>
+			<section>
+				<div>
+					<h2>Un poco de historia</h2>
+					<p class="dos-columnas">En 1440 GUTENBERG inventa la imprenta moderna</p>
+					<p class="dos-columnas">En 1991 BERNERS-LEE propone el lenguaje HTML</p>
+					<p class="dos-columnas">Medios Impresos llevan 600 años</p>
+					<p class="dos-columnas">Medios Digitales llevan 25 años</p>
+					<p class="dos-columnas">El lienzo es el papel</p>
+					<p class="dos-columnas">El lienzo es la pantalla</p>
+					<p class="dos-columnas">Colores CMYK</p>
+					<p class="dos-columnas">Colores RGB</p>
+					<p class="dos-columnas">Dimensiones milímetros</p>
+					<p class="dos-columnas">Dimensiones pixeles</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<article class="dos-columnas">
+						<img src="http://bextlan.com/img/para-cursos/papel.jpg" style="max-height: 200px">
+					</article>
+					<article class="dos-columnas">
+						<img src="http://bextlan.com/img/para-cursos/primera-decision.png" style="max-height: 200px">	
+					</article>
+					<p class="dos-columnas">Dimensiones cerradas en las que definir y estructurar el contenido</p>
+					<p class="dos-columnas">Dimensiones abiertas en las que definir y estructurar el contenido</p>
+				</div>
+			</section>
+			<section>
+				<h2>Frontend<br><br>Front end<br><br>Front-end<br><br>	</h2>
+				<a href="https://es.wikipedia.org/wiki/Front-end_y_back-end" target="_blank">definición</a>
+			</section>
+			<section>
+				<h2>Partiendo de...</h2>
+				<img src="img/browsers.png">
+			</section>
+			<section>
+				<h2>Teníamos...</h2>
+				<img src="img/html-css-js.jpg">
+			</section>
+			<section>
+				<h2>Y también...</h2>
+				<img src="img/ps-fl.jpg">
+			</section>
+			<section>
+				<h2>Pero... en 2007</h2>
+				<img src="http://bextlan.com/img/para-cursos/steve-iphone.png">
+			</section>
+			<section>
+				<h2>Y entonces...</h2>
+				<img src="http://bextlan.com/img/para-cursos/1024x768.png">
+			</section>
+			<section>
+				<img src="http://bextlan.com/img/para-cursos/not-the-web.png">
+			</section>
+			<section>
+				<img src="http://bextlan.com/img/para-cursos/this-is-the-web.png">
+			</section>
+			<section>
+				<img src="http://bextlan.com/img/para-cursos/will-be-the-web.png">
+			</section>
+			<section>
+				<h2><a href="http://flashvhtml.com/" target="_blank">FLASH VS HTML5</a></h2>
+				<img src="img/html5-vs-flash.jpg">
+			</section>
+			<section>
+				<h2>La base del Diseño Web Actual</h2>
+				<img src="img/logo-html5.png" style="border:0; box-shadow:none; max-width:256px">
+			</section>
+			<section>
+				<h2>SÉ UN HÉROE</h2>
+				<img src="img/web-hero.jpg">
+			</section>
+			<section>
+				<h2>HTML5</h2>
+				<p>Define los actuales estándares de diseño y desarrollo web, tanto para equipos de escritorio, como para dispositivos móviles.</p>
+			</section>
+			<section>
+				<img src="img/formula-html5.png">
+			</section>
+			<section>
+				<h2>HTML5</h2>
+				<p>
+					Es la sinergia de 3 tecnologías que se complementan en el diseño y desarrollo Frontend:
+				</p>
+				<ul>
+					<li>HTML (<b>estructura y contenido</b>)</li>
+					<li>CSS (<b>diseño y presentación</b>) y</li>
+					<li>JS (<b>interactividad y funcionalidad</b>)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Implementaciones HTML5</h2>
+	            <article class="cuatro-columnas">
+	            	<div>
+                        <p>Semantics</p>
+                        <img class="redonda" src="img/semantica.png">
+                    </div>
+                    <div>
+                        <p>Multimedia</p>
+                        <img class="redonda" src="img/multimedia.png">
+                    </div>
+	            </article>
+	            <article class="cuatro-columnas">
+	            	<div>
+                        <p><small>Offline & Local Storage</small></p>
+                        <img class="redonda" src="img/offline-storage.png">
+                    </div>
+                    <div>
+                        <p><small>3D, Graphics & Effects</small></p>
+                        <img class="redonda" src="img/3d-effects.png">
+                    </div>
+	            </article>
+	            <article class="cuatro-columnas">
+	            	<div>
+                        <p><small>Device Access</small></p>
+                        <img class="redonda" src="img/device-access.png">
+                    </div>
+                    <div>
+                        <p><small>Performance & Integration</small></p>
+                        <img class="redonda" src="img/performance.png">
+                    </div>
+	            </article>
+	            <article class="cuatro-columnas">
+	            	<div>
+                        <p>Connectivity</p>
+                        <img class="redonda" src="img/connectivity.png">
+                    </div>
+                    <div>
+                        <p>CSS3</p>
+                        <img class="redonda" src="img/css3.png">
+                    </div>
+	            </article>
+			</section>
+			<section>
+				<h2>Más sobre HTML5</h2>
+				<ul>
+					<li><a href="http://www.w3.org/html/logo/" target="_blank">Sitio Oficial</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank">Mozilla Developer Network</a></li>
+					<li><a href="http://www.html5rocks.com/en/" target="_blank">HTML5 Rocks</a></li>
+					<li><a href="https://www.w3.org/TR/html51/" target="_blank">Estandar HTML 5.1</a></li>
+					<li><a href="https://www.w3.org/TR/html52/" target="_blank">Estandar HTML 5.2</a></li>
+					<li><a href="http://browserdiet.com/es/" target="_blank">Guía de Rendimiento Front end</a></li>
+					
+				</ul>
+			</section>
+			<section>
+				<h2>Front end Contemporáneo</h2>
+				<p><a href="https://medium.com/creative-business/why-is-it-so-hard-to-find-a-front-end-developer-cb92848a7c6f" target="_blank">¿Por qué es tan difícil encontrar un buen Front end?</a></p>
+				<img src="img/frontend-is-coming.jpg">
+			</section>
+			<section>
+				<h2>Ahora nos preocupamos de...</h2>
+				<img src="img/html-css-js-rwd.png">
+			</section>
+			<section>
+				<h2>Nuevos Conceptos</h2>
+				<img src="img/front-end-developer-tools.jpg">
+			</section>
+			<section>
+				<h2>Nuevas Herramientas</h2>
+				<img src="img/front-end-developer-tools2.jpg" style="max-height:500px;">
+			</section>
+			<section>
+				<h2>Más Herramientas</h2>
+				<img src="img/front-end-developer-tools3.jpg">
+			</section>
+			<section>
+				<img src="img/more.jpg">
+			</section>
+			<section>
+				<h2>Máááááááááás Herramientas</h2>
+				<img src="img/front-end-developer-tools4.jpg" style="max-height:500px;">
+			</section>
+			<section>
+				<img src="img/no-more.jpg">
+			</section>
+			<section>
+				<img src="img/spectrum-frontend.png">
+				<p><a href="https://www.frontendhandbook.com/" target="_blank">Fuente</a></p>
+			</section>
+			<section>
+				<h2>Entendiendo el Front end</h2>
+				<img src="img/understand-front-end.jpg">
+				<p><a href="http://www.slideshare.net/randylien/understand-front-end-developer" target="_blank">Fuente</a></p>
+			</section>
+			<section>
+				<h2>Ubícate y Enfócate</h2>
+				<h3>¡¡¡ No desesperes !!!</h3>
+				<img src="img/great-frontend.png">
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Terminal de Comandos</h2>
+				<img src="img/terminal-comandos.jpg">
+			</section>
+			<section>
+				<h3>La terminal llego para quedarse<br>en el Front end...<br>acostúmbrate a ella</h3>
+			</section>
+			<section>
+				<p>
+					La interfaz de línea de comandos (en inglés, command-line interface, CLI) es un método que permite a los usuarios dar instrucciones a algún programa informático por medio de una línea de texto simple.
+				</p>
+			</section>
+			<section>
+				<p>
+					Las CLI pueden emplearse interactivamente, escribiendo instrucciones en alguna especie de entrada de texto, o pueden utilizarse de una forma mucho más automatizada, leyendo órdenes desde un archivo de scripts.
+				</p>
+			</section>
+			<section>
+				<h4>Comandos Básicos</h4>
+				<ul>
+					<li><a href="https://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/" target="_blank">Linux/OS X</a></li>
+					<li><a href="https://ss64.com/nt/index.html" target="_blank">Windows</a></li>
+				</ul>
+				<br><br>
+				<h4>Opciones para Windows</h4>
+				<ul>
+					<li><a href="https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/cmd.mspx?mfr=true" target="_blank">CMD</a></li>
+					<li><a href="https://msdn.microsoft.com/en-us/powershell" target="_blank">PowerShell</a></li>
+					<li><a href="https://git-for-windows.github.io/" target="_blank">Git BASH</a></li>
+					<li><a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank">Bash on Ubuntu</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Editores & IDEs</h2>
+				<p><a href="https://www.youtube.com/watch?v=sdVh7nkUUG0" target="_blank">Diferencias entre Editores e IDEs</a></p>
+				<img src="img/IDE-or-TextEditor.png">
+			</section>
+			<section>
+				<div>
+					<article class="dos-columnas">
+						<p>Editores de Código</p>
+						<ul>
+							<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+							<li><a href="https://atom.io/" target="_blank">ATOM</a></li>
+							<li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a> <small>+ (<a href="https://packagecontrol.io/" target="_blank">Package Control</a>)</small></li>
+							<li><a href="http://brackets.io/" target="_blank">Brackets</a></li>
+							<li><a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a></li>
+							<li><a href="http://www.vim.org/" target="_blank">Vim</a></li>
+							<li><a href="http://www.gnu.org/software/emacs/" target="_blank">GNU Emacs</a></li>
+							<li><a href="http://codepen.io/" target="_blank">CodePen</a></li>
+						</ul>
+					</article>
+					<article class="dos-columnas">
+						<p>IDEs <small>(Integrated Development Enviroment)</small></p>
+						<ul>
+							<li><a href="https://eclipse.org/" target="_blank">Eclipse</a></li>
+							<li><a href="https://netbeans.org/" target="_blank">NetBeans</a></li>
+							<li><a href="http://www.aptana.com/" target="_blank">Aptana</a></li>
+							<li><a href="https://www.visualstudio.com/" target="_blank">Visual Studio</a></li>
+							<li><a href="https://developer.android.com/studio/index.html" target="_blank">Android Studio</a></li>
+							<li><a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a></li>
+							<li><a href="https://www.jetbrains.com/webstorm/" target="_blank">Web Storm</a></li>
+							<li><a href="https://www.jetbrains.com/phpstorm/" target="_blank">PHP Storm</a></li>
+						</ul>
+					</article>
+				</div>
+				<p class="clear"><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<img src="img/logo-git.png" style="border:0; box-shadow: none;">
+			</section>
+			<section>
+				<p>
+					Software de control de versiones <b>distribuido</b> y <b>descentralizado</b> que permite a un equipo de desarrolladores trabajar sobre el mismo código.
+				</p>
+				<br>
+				<p>
+					Se denomina "<b><i>distribuido</i></b>" porque cada miembro del equipo dispone de una copia completa del código.
+				</p>
+			</section>
+			<section>
+				<img src="img/git-centr-decentr.png" style="max-width: 80%;">
+			</section>
+			<section>
+				<h2>Ventajas de usar Git</h2>
+				<ul>
+					<li>Estándar actual</li>
+					<li>Código colaborativo, versionado y distribuido</li>
+					<li>Recuperación de archivos</li>
+					<li>Mayor control</li>
+					<li>Shorcuts y Plugins</li>
+					<li>Mejora tu productividad</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Estándar Actual</h2>
+				<img src="img/git-estadisticas.png">
+			</section>
+			<section>
+				<h2><a href="https://git-scm.com/" target="_blank">Instalación</a></h2>
+			</section>
+			<section>
+				<h2>Configurando Git<br>primera vez</h2>
+				<pre>
+					<code class="terminal">
+$ > git --version
+$ > git config --global user.name "Jonathan MirCha"
+$ > git config --global user.email jonmircha@gmail.com
+$ > git config --global user.ui true
+$ > git config --global core.editor nano
+$ > git config --list
+$ > git help [comando a buscar]
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Inicializar Git en local</h2>
+				<small>
+					<ul>
+						<li><b>git init</b> crea un directorio oculto .git donde se almacena toda la información utilizada por git</li>
+						<li>El comando UNIX <b>touch</b> nos crea un nuevo archivo</li>
+						<li>En el archivo <b>.gitignore</b> incluimos lo que NO queramos en nuestro repositorio (<a href="http://gitignore.io" target="_blank">gitignore.io</a>)</li>
+						<li><b>git status</b> nos muestra el listado de archivos nuevos, borrados o editados (untracked)</li>
+					</ul>
+				</small>
+				<pre>
+					<code class="terminal">
+$ > mkdir carpeta
+$ > cd carpeta
+$ > touch README.md
+$ > touch .gitignore
+$ > git init
+$ > git status
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Plataformas web para Git</h2>
+				<img src="img/git-github.png">
+			</section>
+			<section>
+				<h2>Plataformas web para Git</h2>
+				<ul>
+					<li><a href="https://github.com/" target="_blank">GitHub</a></li>
+					<li><a href="https://gitlab.com/" target="_blank">GitLab</a></li>
+					<li><a href="https://bitbucket.org/" target="_blank">BitBucket</a></li>
+					<li>etc</li>
+				</ul>
+			</section>
+			<section>
+				<h2>GUI para Git</h2>
+				<ul>
+					<li><a href="https://github.com/integrations/github-desktop" target="_blank">GitHub Desktop</a></li>
+					<li><a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Aprende más de Git</h2>
+				<ul>
+					<li><a href="http://rogerdudler.github.io/git-guide/index.es.html" target="_blank">Git - La guía sencilla</a></li>
+					<li><a href="https://git-scm.com/book/es/v2" target="_blank">Libro Pro Git</a></li>
+				</ul>
+			</section>
+			<section>
+				<img src="img/octocat.png" style="border:0; box-shadow: none;">
+				<h2>
+					<a href="https://github.com/" target="_blank">Crea tu cuenta</a>
+				</h2>
+				<ul>
+					<li><a href="https://guides.github.com/" target="_blank">Guías Oficiales de GitHub</a></li>
+					<li><a href="https://try.github.io/" target="_blank">Try GitHub</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Zonas y Flujo de trabajo básico</h2>
+				<img src="img/logo-git.png" style="display: inline-block; vertical-align: middle; border:0; box-shadow: none;">
+				<img src="img/octocat.png" style="display: inline-block; vertical-align: middle; border:0; box-shadow: none;">
+			</section>
+			<section>
+				<p style="font-size: 200%;">El flujo se distribuye en tres estados locales y uno remoto</p>
+			</section>
+			<section>
+				<ul>
+					<li>
+						<p><b>Estados Locales:</b></p>
+						<ol>
+							<li>
+								Directorio de trabajo (<b>Working Area</b>)
+								<br>
+								<small>El directorio donde almacenamos los archivos</small>
+							</li>
+							<li>
+								Área de preparación (<b>Staging Area</b>)
+								<br>
+								<small>El estado en el que avisamos a Git que hemos realizado cambios</small>
+							</li>
+							<li>
+								Repositorio local (<b>HEAD</b>)
+								<br>
+								<small>Toma los cambios y almacena una copia instantánea en el directorio local (Git)</small>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<p><b>Estado Remoto:</b></p>
+						<ol start="4">
+							<li>
+								Origen Remoto (<b>Remote Origin</b>)
+								<br>
+								<small>Toma los cambios y almacena una copia instantánea en el directorio remoto (GitHub)</small>
+							</li>
+						</ol>	
+					</li>
+				</ul>
+			</section>
+			<section>
+				<img src="img/git-level-wd.png">
+			</section>
+			<section>
+				<img src="img/git-level-staging.png">
+			</section>
+			<section>
+				<img src="img/git-level-head.png">
+			</section>
+			<section>
+				<img src="img/git-level-origin.png">
+			</section>
+			<section>
+				<img src="img/git-level-pull.png">
+			</section>
+			<section>
+				<h2>Flujo de Trabajo Git - GitHub<br>Primera Vez</h2>
+				<pre>
+					<code class="terminal">
+$ > git add .
+$ > git commit -m 'mensaje descriptivo'
+$ > git remote add origin https://github.com/usuario/repositorio.git 
+$ > git push -u origin master //Enviar archivos de local a remoto (Subir)
+$ > git pull -u origin master //Enviar archivos de remoto a local (Bajar)
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Flujo de Trabajo Git - GitHub<br>Subsecuentes veces</h2>
+				<pre>
+					<code class="terminal">
+$ > git add .
+$ > git commit -m 'mensaje descriptivo'
+$ > git push //Enviar archivos de local a remoto (Subir)
+$ > git pull //Enviar archivos de remoto a local (Bajar)
+					</code>
+				</pre>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Historial</h2>
+				<p>
+					<b>git log</b> nos permite conocer todo el historial de un proyecto, con la información de la fecha, el autor y id de cada cambio
+				</p>
+				<pre>
+					<code class="terminal">
+$ > git log
+$ > git log --oneline
+$ > git log > commits.txt
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Ramas</h2>
+				<p>
+					Una rama nos permite aislar una nueva funcionalidad en nuestro código que después podremos añadir a la versión principal
+				</p>
+				<pre>
+					<code class="terminal">
+$ > git branch [nombre-rama] //crear rama
+$ > git branch -d [nombre-rama] //eliminar rama
+$ > git branch -D [nombre-rama] //eliminar rama (forzado)
+$ > git branch //listar ramas
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Viajar en el Tiempo y Espacio</h2>
+				<p>
+					Podemos desplazarnos en el historial del proyecto hacia atrás o adelante en cambios o ramas , sin afectar el proyecto como tal
+				</p>
+				<pre>
+					<code class="terminal">
+$ > git checkout [nombre-rama] //cambiar a una rama
+$ > git checkout [id-commit] //cambiar a un cambio
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Resetear</h2>
+				<p>
+					Podemos eliminar el historial de cambios del proyecto hacia adelante con respecto de un punto de referencia
+				</p>
+				<pre>
+					<code class="terminal">
+$ > git reset --soft //borra el HEAD
+$ > git reset --mixed //borra el HEAD y el Staging
+$ > git reset --hard //borra el HEAD, Staging y WorkingDir
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Fusiones</h2>					
+				<p>Une dos ramas. Para hacer una fusión necesitamos:</p>
+				<ol>
+					<li>Situarnos en la rama que se quedará con el contenido fusionado</li>
+					<li>Fusionar</li>
+				</ol>
+				<pre>
+					<code class="terminal">
+//Nos cambiamos a la rama principal que quedará de la fusión
+$ > git checkout [rama-principal]
+//Ejecutamos el comando merge con la rama secundaria a fusionar
+$ > git merge [rama-secundaria]
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Fusiones</h2>					
+				<p>Cuando se fusionan ramas se pueden dar 2 resultados:</p>
+				<ol>
+					<li><b>Fast-Forward:</b> La fusión se hace automática, no hay conflictos por resolver</li>
+					<li><b>Manual Merge:</b> La fusión hay que hacerla manual, para resolver conflictos de duplicación de contenido</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Etiquetas</h2>
+				<p>
+					Con esta opción git nos permite versionar nuestro código, librería o proyecto
+				</p>
+				<pre>
+					<code class="terminal">
+$ > git tag [numero-versión] //crear una etiqueta
+$ > git show [numero-versión] //mostrar información de una etiqueta
+$ > git tag //listar etiquetas
+
+$ > git add .
+$ > git commit -m 'v1.0.0'
+
+$ > git push origin [numero-versión] //compartir etiqueta en GitHub
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></h2>
+				<p>
+					<b>gh-pages</b> es una rama especial para crear un sitio web a tu proyecto alojado directamente en tu repositorio de Github.
+				</p>
+				<small>
+					<ol>
+						<li>URL del repositorio: <b>https://github.com/usuario/repositorio</b></li>
+						<li>URL del sitio: <b>https://usuario.github.io/repositorio</b></li>
+					</ol>
+				</small>
+				<pre>
+					<code class="terminal">
+$ > git init
+$ > git add .
+$ > git commit -m 'Creando sitio web en GitHub Pages'
+$ > git branch gh-pages
+$ > git checkout gh-pages
+$ > git remote add origin https://github.com/usuario/repositorio.git
+$ > git push origin gh-pages
+$ > git pull origin gh-pages
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Clonar repositorios</h2>
+				<pre>
+					<code class="terminal">
+$ > git clone [url-repositorio]
+					</code>
+				</pre>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Metalenguajes Front end</h2>
+				<img src="./img/preprocesadores.png">
+			</section>
+			<section>
+				<p>
+					Son lenguajes independientes (generalmente, más amigables, potentes y prácticos) que son capaces de traducir el código al lenguaje de destino (HTML, CSS o JavaScript), que son los únicos que los navegadores son capaces de entender de forma nativa.
+				</p>
+			</section>
+			<section>
+				<p>
+					El objetivo de los metalenguajes o preprocesadores es tener un código más sencillo de mantener y editar. Incluyen características tales como variables, funciones, mixins, anidación y modularidad.
+				</p>
+			</section>
+			<section>
+				<p>
+					Son soportados por plataformas web como:
+				</p>
+				<ul>
+					<li><a href="http://codepen.io/" target="_blank">CodePen</a></li>
+					<li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
+					<li><a href="http://jsbin.com/" target="_blank">JS Bin</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Metalenguajes HTML</h2>
+				<ul>
+					<li><a href="http://whatismarkdown.com/" target="_blank">Markdown</a>(<small><a href="http://joedicastro.com/pages/markdown.html" target="_blank">Guía</a></small>)</li>
+					<li><a href="https://pugjs.org" target="_blank">Pug</a> (<small>antes Jade</small>)</li>
+					<li><a href="http://haml.info/" target="_blank">Haml</a></li>
+					<li><a href="http://slim-lang.com/" target="_blank">Slim</a></li>
+					<li><a href="http://handlebarsjs.com/" target="_blank">Handlebars</a></li>
+					<li><a href="http://ejs.co/" target="_blank">EJS</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Metalenguajes CSS</h2>
+				<ul>
+					<li><a href="http://lesscss.org/" target="_blank">Less</a></li>
+					<li><a href="http://stylus-lang.com/" target="_blank">Stylus</a></li>
+					<li>
+						<a href="http://sass-lang.com/" target="_blank">Sass</a>
+						<br>
+						<small>
+							<ul>
+								<li>Sintaxis Sass</li>
+								<li>Sintaxis SCSS</li>
+							</ul>
+						</small>
+					</li>
+					<li>
+						<a href="http://postcss.org/" target="_blank">PostCSS</a>
+						<br>
+						<small>
+							<ul>
+								<li><a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a></li>
+								<li><a href="http://cssnext.io/" target="_blank">CSSNext</a></li>
+								<li><a href="https://github.com/css-modules/css-modules" target="_blank">CSS Modules</a></li>
+							</ul>
+						</small>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Metalenguajes JavaScript</h2>
+				<ul>
+					<li><a href="http://livescript.net/" target="_blank">LiveScript</a></li>
+					<li><a href="http://coffeescript.org/" target="_blank">CoffeeScript</a></li>
+					<li><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a></li>
+					<li><a href="http://babeljs.io/" target="_blank">Babel</a></li>
+					<li><a href="https://github.com/google/traceur-compiler" target="_blank">Traceur</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Gestores de Tareas</h2>
+				<img src="./img/build-systems-task-runners.png">
+			</section>
+			<section>
+				<p>
+					También llamados <b>Build Systems</b> o <b>Task Runners</b>, permiten automatizar tareas comunes de desarrollo, tales como la minificación de código, recarga del navegador, compresión de imágenes, validación de sintaxis de código, compilación de preprocesadores y un sin fin de tareas más.
+				</p>
+			</section>
+			<section>
+				<p>
+					No importa si eres un desarrollador Frontend o Backend. Si hoy en día no quieres perder tiempo realizando tareas comunes manualmente, debes usarlos.
+				</p>
+			</section>
+			<section>
+				<p>
+					Estos gestores de tareas se ayudan de componentes (plugins) para llevar a cabo su labor y cada uno tiene su propia manera de configurarse, usa el que más se acomode a tu filosofía de trabajo
+				</p>
+			</section>
+			<section>
+				<h2>Gestores de Tareas</h2>
+				<ul>
+					<li><a href="http://gruntjs.com/" target="_blank">Grunt</a></li>
+					<li><a href="http://gulpjs.com/" target="_blank">Gulp</a></li>
+					<li><a href="http://brunch.io/" target="_blank">Brunch</a></li>
+					<li><a href="https://webpack.github.io/" target="_blank">Webpack</a></li>
+					<li><a href="https://docs.npmjs.com/" target="_blank">Comandos NPM</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<img src="img/nodejs-new-pantone-black.png" style="border:0; box-shadow: none;">
+			</section>
+			<section>
+				<p style="font-size: 200%;"><b>Si nos vamos al sitio oficial:</b></p>
+				<blockquote>
+					<a href="https://nodejs.org/" target="_blank">Node.js®</a> es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, <a href="https://www.npmjs.com/" target="_blank">npm</a>, es el ecosistema mas grande de librerías de código abierto en el mundo.
+				</blockquote>
+			</section>
+			<section>
+				<p style="font-size: 200%;"><b>En palabras de su creador:</b></p>
+				<figure class="dos-columnas">
+					<img src="img/ryan-dahl.jpg" />
+					<figcaption>
+						<a href="https://github.com/ry" target="_blank">Ryan Dahl</a>
+						<br>
+						<small><a href="https://www.youtube.com/watch?v=ztspvPYybIY" target="_blank">Video Presentación Oficial de Node.js</a></small>
+					</figcaption>
+				</figure>
+				<div class="dos-columnas">
+					<i>JavaScript has certain characteristics that make it very different than other dynamic languages, namely that it has no concept of threads. Its model of concurrency is completely based around events</i>
+				</div>
+			</section>
+			<section>
+				<h2>Infraestructura</h2>
+				<div>
+					<img src="img/nodejs-platform.png">
+				</div>
+			</section>
+			<section>
+				<h1>En síntesis</h1>
+			</section>
+			<section>
+				<p style="font-size: 200%;"><b>Node.js es:</b></p>
+				<ul>
+					<li>Plataforma de desarrollo de software creada en 2009</li>
+					<li>Basado en V8 la máquina virtual de Chrome (<small>V8 esta escrito en C</small>)
+					<li>Una <a href="https://www.joyent.com/" target="_blank">marca registrada</a> y es <a href="https://github.com/nodejs/node" target="_blank">open source</a></li>
+					<li>Multiplataforma (<small>Windows, OS X, Linux, etc.</small>)</li>
+					<li>JavaScript</li>
+					<li>Asíncrono y orientado a eventos</li>
+					</li>
+					<li>Ideal para aplicaciones en tiempo real y que se ejecutan en dispositivos distribuidos</li>
+					<li>Lo <a href="https://nodejs.org/en/foundation/members/" target="_blank">usan</a> y apoyan muchas empresas</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 200%;"><b>Permite tener JavaScript en:</b></p>
+				<ul>
+					<li>La Terminal de Comandos</li>
+					<li>Editores de Código & IDE's</li>
+					<li>En el Front end y los Navegadores</li>
+					<li>
+						En el Back end como:
+						<ul>
+							<li>Lenguaje de programación</li>
+							<li>Servidor Web</li>
+						</ul>
+					</li>
+					<li>En Bases de Datos NoSQL</li>
+					<li>Interactuando con Hardware (<small><a href="http://johnny-five.io/" target="_blank">Johnny-Five</a>, <a href="http://nodebots.io/" target="_blank">NodeBots</a></small>)
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Conceptos que puedes investigar<br>para entender mejor:</b></p>
+				<div>
+					<article class="dos-columnas">
+						<p>Node.js es:</p>
+						<ul>
+							<li>Concurrente</li>
+							<li>Asíncrono</li>
+							<li>No Bloqueante</li>
+							<li>Single Thread</li>
+							<li>Usa el <a href="http://es.wikipedia.org/wiki/Reactor_(patr%C3%B3n_de_dise%C3%B1o)" target="_blank">Patrón Reactor</a></li>
+						</ul>
+					</article>
+					<article class="dos-columnas">
+						<p>Node.js <b>NO</b> es:</p>
+						<ul>
+							<li>Paralelo</li>
+							<li>Síncrono</li>
+							<li>Bloqueante</li>
+							<li>Multi Thread</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+			<section>
+				<h2>Más info:</h2>
+				<ul>
+					<li><a href="https://desarrolloweb.com/manuales/manual-nodejs.html" target="_blank">Manual de Node.js</a> de DesarrolloWeb</li>
+					<li><a href="https://www.youtube.com/watch?v=iaZtvh7_9_Q" target="_blank">NodeJS Imparable en 2017</a> #programadorIO</li>
+					<li><a href="http://escuela.it/cursos/curso-de-nodejs/" target="_blank">Curso de Node.js</a> de Escuela IT</li>
+					<li><a href="https://www.youtube.com/playlist?list=PLvq-jIkSeTUY3gY-ptuqkNEXZHsNwlkND" target="_blank">Curso de Node.js</a> de Bextlán</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Instalación</h2>
+				<ol>
+					<li>Entrar a <a href="http://nodejs.org/" target="_blank">nodejs.org</a></li>
+					<li>Instalar versión <b>superior</b> a la 4.0.0</li>
+					<li>En la sección de <a href="https://nodejs.org/en/download/" target="_blank">descarga</a> están los pasos a seguir para todas la plataformas existentes</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Versiones</h2>
+				<ol>
+					<li>
+						<b>LTS <small>(Long Term Support)</small></b>
+						<ul>
+							<li>Soporte a Largo Plazo</li>
+							<li>Estable, recomendada para entornos de producción</li>
+						</ul>
+					<li>
+						<b>Current</b>
+						<ul>
+							<li>Desarrollo continuo del ecosistema Node.js</li>
+							<li>Con las últimas características disponibles</li>
+							<li>Liberaciones semanales</li>
+							<li>Recomendada para entornos de desarrollo</li>
+						</ul>
+					</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Probando Instalación</h2>
+				<ol>
+					<li>Abrir una terminal de comandos</li>
+					<li>
+						Ejecutar los siguientes comandos
+						<ul>
+							<li><b><code>node -v</code></b></li>
+							<li><b><code>npm -v</code></b></li>
+						</ul>
+					</li>
+				</ol>	
+			</section>
+			<section>
+				<h2>Recomendaciones</h2>
+				<ul>
+					<li>Recuerda que para el correcto funcionamiento de Node.js tu usuario debe ser <b>Administrador</b> del Equipo</li><br />
+					<li>
+						Si tu terminal no reconoce los comandos:
+						<ul>
+							<li>En OS X o Linux debes ejecutarlos anteponiendo el comando <b><code>sudo</code></b></li>
+							<li>En Windows, reinicia y verifica que en las variables de entorno del sistema exista <b>NODE_PATH</b></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Instalación con NVM</h2>
+				<p style="font-size: 120%;"><b>Node Version Manager</b></p>
+				<ul>
+					<li>Para <a href="https://github.com/creationix/nvm" target="_blank">Linux / OS X</a></li>
+					<li>Para <a href="https://github.com/coreybutler/nvm-windows" target="_blank">Windows</a></li>
+				</ul>
+				<p class="clear"><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Node Package Manager</h2>
+				<img src="./img/npm-logo.png" style="border:0; box-shadow: none;">
+				<p>
+					<a href="https://www.npmjs.com/" target="_blank">npm</a> es el gestor de paquetes de Node.js... y de todo JavaScript
+				</p>
+			</section>
+			<section>
+				<h2>Iniciar un proyecto npm</h2>
+				<pre>
+					<code class="terminal">
+$ > npm init //Con asistente
+$ > npm init -y //Sin asistente
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2 style="text-transform: lowercase !important">
+					<a href="https://docs.npmjs.com/files/package.json" target="_blank">package.json</a>
+				</h2>
+				<ul>
+					<li>Es el archivo de configuración de un proyecto de node.js</li>
+					<li><a href="http://browsenpm.org/package.json" target="_blank">Configuración</a> del package.json</li>
+					<li><a href="http://semver.org/" target="_blank">Semantic Versioning</a></li>
+				</ul>
+			</section>
+			<section>
+				<pre>
+					<code class="terminal">
+{
+    "name": "module-name",
+    "version": "10.3.1",
+    "description": "An example module to illustrate the usage of a package.json",
+    "author": "Your Name &lt;you.name@example.org&gt;",
+    "contributors": [{
+        "name": "Foo Bar",
+        "email": "foo.bar@example.com"
+    }],
+    "bin": {
+        "module-name": "./bin/module-name"
+    },
+    "scripts": {
+        "test": "vows --spec --isolate",
+        "start": "node index.js",
+        "predeploy": "echo im about to deploy",
+        "postdeploy": "echo ive deployed",
+        "prepublish": "coffee --bare --compile --output lib/foo src/foo/*.coffee"
+    },
+    "main": "lib/foo.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodejitsu/browsenpm.org"
+    },
+    "bugs": {
+        "url": "https://github.com/nodejitsu/browsenpm.org/issues"
+    },
+    "keywords": [
+        "nodejitsu",
+        "example",
+        "browsenpm"
+    ],
+    "dependencies": {
+        "primus": "*",
+        "async": "~0.8.0",
+        "express": "4.2.x",
+        "winston": "git://github.com/flatiron/winston#master",
+        "bigpipe": "bigpipe/pagelet",
+        "plates": "https://github.com/flatiron/plates/tarball/master"
+    },
+    "devDependencies": {
+        "vows": "^0.7.0",
+        "assume": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
+        "pre-commit": "*"
+    },
+    "preferGlobal": true,
+    "private": true,
+    "publishConfig": {
+        "registry": "https://your-private-hosted-npm.registry.nodejitsu.com"
+    },
+    "subdomain": "foobar",
+    "analyze": true,
+    "license": "MIT"
+}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Paquetes NPM</h2>
+				<h3>Tipos de Instalación</h3>
+				<ul>
+					<li>Única (<small>no se recomienda</small>)</li>
+					<li>Global</li>
+					<li>Dependencia de proyecto</li>
+					<li>Dependencia de desarrollo</li>
+					<li>Múltiple</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Instalación Única</h3>
+				<p>
+					<small>
+						Se instalan en la carpeta donde se encuentre la terminal de comandos, NO se registran en el archivo package.json		
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install [nombre del package]
+
+$ > npm install [nombre del package]@3.4.12 // Versión específica
+
+$ > npm i [nombre del package] //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Como Dependencia de proyecto</h3>
+				<p>
+					<small>
+						Se instalan en la carpeta donde se encuentre la terminal de comandos, SI se registran en el archivo package.json como dependencias del proyecto, esto significa que el proyecto requiere de éstos paquetes para funcionar
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install [nombre del package] --save
+
+$ > npm install [nombre del package] -S //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Como Dependencia de desarrollo</h3>
+				<p>
+					<small>
+						Se instalan en la carpeta donde se encuentre la terminal de comandos, SI se registran en el archivo package.json como dependencias de desarrollo del proyecto, esto significa que facilitan y optimizan las tareas comunes de desarrollo y publicación del proyecto
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install [nombre del package] --save-dev
+
+$ > npm install [nombre del package] -D //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Instalación Global</h3>
+				<p>
+					<small>
+						Se instalan localmente en el ordenador independientemente de donde se encuentre la terminal de comandos, esto significa que estarán disponibles en todas las carpetas del ordenador, NO se registran en el archivo package.json
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install [nombre del package] --global
+
+$ > npm install [nombre del package] -g //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Instalación Múltiple de paquetes</h3>
+				<p>
+					<small>
+						Se pueden instalar múltiples paquetes, separando sus nombres con un espacio en blanco y al final especificar el flag del tipo de instalación
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install [package1] [package2] [package3] --flag
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Instalación de proyecto con package.json</h3>
+				<p>
+					<small>
+						Cuando un proyecto tiene el archivo package.json se pueden instalar todas las dependencias de proyecto y desarrollo que tenga registradas en el mismo
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm install
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Actualización de paquetes</h3>
+				<pre>
+					<code class="terminal">
+$ > npm update [package] //se actualiza de la carpeta node_modules
+
+$ > npm update [package] --save
+
+$ > npm update [package] --save-dev
+
+$ > npm update [package] --global
+
+$ > npm update [package] //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Desinstalación de paquetes</h3>
+				<pre>
+					<code class="terminal">
+$ > npm uninstall [package] //se borra de la carpeta node_modules
+
+$ > npm uninstall [package] --save
+
+$ > npm uninstall [package] --save-dev
+
+$ > npm uninstall [package] --global
+
+$ > npm un [package] //shortcut
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Publicación de paquetes</h3>
+				<p>
+					<small>
+						Un paquete no puede volver a re-publicarse con la misma versión. Si despublicas un paquete puedes romper Internet
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm publish
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Mostrar información de paquetes</h3>
+				<p>
+					<small>
+						Lee metadatos del archivo <b>package.json</b> del paquete en su repositorio oficial
+					</small>
+				</p>
+				<pre>
+					<code class="terminal">
+$ > npm view [package]
+$ > npm view [package] versions
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3>Scripts de paquetes</h3>
+				<small>
+					<p>Podemos ejecutar comandos de un paquete mediante la definición de scripts en el archivo package.json</p>
+					<p>'<b>npm start</b>' no necesita especificar '<b>run</b>', es el script standar para lanzar un proyecto npm</p>
+					
+				</small>
+				<pre>
+					<code class="json">
+"scripts": {
+  "sass": "node-sass -o ./dist/ ./src/",
+  "stylus": "stylus -w ./src/style.styl -o ./dist/style.css",
+  "start": "supervisor main.js"
+ }
+ 
+$ > npm run sass
+$ > npm run stylus
+$ > npm start
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h3><a href="https://docs.npmjs.com/" target="_blank">Documentación NPM</a></h3>
+				<img src="./img/coding-wombat1.png" style="border:0; box-shadow:none;">
+				<p class="clear"><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>NPM Scripts vs Task Runners</h2>
+				<img src="./img/grunt-npm-gulp.png">
+			</section>
+			<section>
+				<p>
+					Los <b>task runners</b> son herramientas que nos ayudan a automatizar tareas repetitivas y de este modo optimizar nuestros recursos y tiempo. Los más conocidos son <b>Grunt</b> y <b>Gulp</b>, y aunque no está considerado un task runner, también podemos utilizar <b>Webpack</b>.
+				</p>
+			</section>
+			<section>	
+				<p>
+					En este curso veremos como podemos reemplazar estas herramientas por simples <b>scripts NPM</b> para automatizar tareas. De este modo, además de tener mayor control, nos ahorraremos bastante tiempo y esfuerzo ya que la curva de aprendizaje es casi nula.
+				</p>
+			</section>
+			<section>
+				<h2>¿Por qué?</h2>
+			</section>
+			<section>
+				<p>
+					Aunque herramientas como <b>Grunt</b> y <b>Gulp</b> han sido y aún son de gran utilidad, el principal problema de dichas herramientas es que requieren de una curva de aprendizaje que en algunos casos puede ser bastante pronunciada.
+				</p>
+			</section>
+			<section>
+				<p>
+					Por otro lado la búsqueda, configuración y ejecución correcta de plugins, que, aunque existen un montón y cubren casi cualquier necesidad puede ser un gran dolor de cabeza.
+				</p>
+			</section>
+			<section>
+				<img src="./img/npm-castores2.png">
+			</section>
+			<section>
+				<p>
+					Otro problema común suele ser la incompatibilidad entre diferentes versiones. Sobre todo cuando utilizamos muchos plugins, es posible que al actualizar nos encontremos con errores.
+				</p>
+			</section>
+			<section>
+				<p>
+					Los <b>scripts NPM</b> solucionan estos problemas por que <b>Node.js</b> es multiplataforma, además nos dan pleno control sobre nuestras tareas y restamos dependencias a nuestros proyectos.
+				</p>
+			</section>
+			<section>
+				<img src="./img/npm-castores.png">
+			</section>
+			<section>
+				<h2>¿No te convences?</h2>
+				<p>Lee este <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/" target="_blank">artículo</a> publicado en diciembre de 2014</p>
+			</section>
+			<section>
+				<h2>¿Sigues Dudando?</h2>
+				<h3>Comparemos código</h3>
+			</section>
+			<section>
+				<h4>Gulp</h4>
+				<img src="./img/codigo-gulp.png">
+			</section>
+			<section>
+				<h4>NPM Scripts</h4>
+				<img src="./img/codigo-npm.png">
+			</section>
+			<section>
+				<h4>Por ello NPM es nuestro ganador</h4>
+				<img src="./img/npm-winner.png" style="max-width: 40%;">
+				<p class="clear"><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h2>Identificando Tareas</h2>
+				<img src="./img/npm-castor-tools.png">
+			</section>
+			<section>
+				<ul style="max-width: 50%; display: inline-block; vertical-align: middle;">
+					<li>Tareas de Compilación</li>
+					<li>Tareas en Tiempo Real</li>
+					<li>Tareas de Publicación</li>
+				</ul>
+				<img src="./img/npm-castor-lap.svg" style="max-width: 50%; display: inline-block; vertical-align: middle; border: none; box-shadow: none;">
+			</section>
+			<section>
+				<article class="clear">
+					<div class="dos-columnas">
+						<h4>Tareas de Compilación</h4>
+						<ul>
+							<li>Sass</li>
+							<li>Babel</li>
+							<li>Pug</li>
+						</ul>
+					</div>
+					<div class="dos-columnas">
+						<h4>Tareas en Tiempo Real</h4>
+						<ul>
+							<li>Servidor Web</li>
+							<li>Servidor Proxy</li>
+							<li>Recarga en vivo</li>
+							<li>Observar cambios</li>
+						</ul>
+					</div>
+				</article>
+			</section>
+			<section>
+				<h4>Tareas de Publicación</h4>
+				<article class="clear">
+					<div class="tres-columnas">
+						<p>CSS</p>
+						<small>
+							<ul>
+								<li>Concatenación</li>
+								<li>Depuración</li>
+								<li>Prefijos</li>
+								<li>Minificación</li>
+							</ul>
+						</small>
+					</div>
+					<div class="tres-columnas">
+						<p>JS</p>
+						<small>
+							<ul>
+								<li>Concatenación</li>
+								<li>Minificación</li>
+								<li>Ofuscación</li>
+							</ul>
+						</small>
+					</div>
+					<div class="tres-columnas">
+						<p>HTML</p>
+						<small>
+							<ul>
+								<li>Reemplazar referencias</li>
+								<li>Minificación</li>
+							</ul>
+						</small>
+					</div>
+				</article>
+				<article class="clear">
+					<div class="dos-columnas">
+						<p>Archivos</p>
+						<small>
+							<ul>
+								<li>Archivos Estáticos</li>
+								<li>Limpieza de archivos</li>
+								<li>Creación de carpetas</li>
+							</ul>
+						</small>
+					</div>
+					<div class="dos-columnas">
+						<p>Imágenes</p>
+						<small>
+							<ul>
+								<li>Optimización</li>
+								<li>Compresión</li>
+								<li>Conversión</li>
+								<li>Redimensión</li>
+							</ul>
+						</small>
+					</div>
+				</article>
+				<p class="clear"><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<h2>Workflow Front end</h2>
+				<img src="./img/npm-castor-work.png">
+			</section>
+			<section>
+				<h2>Repositorio del curso</h2>
+				<a href="" target="_blank">
+					<img src="./img/npm-castor-ninja.png">
+				</a>
+			</section>
+			<section>
+				<h4>Paquetes a usar</h4>
+				<p>
+					<small>
+						instálalos globalmente <b><code>npm i -g</code></b>&nbsp;&nbsp;&nbsp;y como dependencia de desarrollo <b><code>npm i -D</code></b>
+					</small>
+				</p>
+				<p>
+					<small>
+						<a href="https://www.npmjs.com/package/node-sass" target="_blank">node-sass</a> <a href="https://www.npmjs.com/package/babel-cli" target="_blank">babel-cli</a> <a href="https://www.npmjs.com/package/babel-preset-latest" target="_blank">babel-preset-latest</a> <a href="https://www.npmjs.com/package/pug" target="_blank">pug</a> <a href="https://www.npmjs.com/package/pug-cli" target="_blank">pug-cli</a> <a href="https://www.npmjs.com/package/browser-sync" target="_blank">browser-sync</a> <a href="https://www.npmjs.com/package/parallelshell" target="_blank">parallelshell</a> <a href="https://www.npmjs.com/package/rimraf" target="_blank">rimraf</a> <a href="https://www.npmjs.com/package/mkdirp" target="_blank">mkdirp</a> <a href="https://www.npmjs.com/package/uncss" target="_blank">uncss</a> <a href="https://www.npmjs.com/package/postcss-cli" target="_blank">postcss-cli</a> <a href="https://www.npmjs.com/package/autoprefixer" target="_blank">autoprefixer</a> <a href="https://www.npmjs.com/package/buildify" target="_blank">buildify</a> <a href="https://www.npmjs.com/package/useref" target="_blank">useref</a> <a href="https://www.npmjs.com/package/useref-cli" target="_blank">useref-cli</a> <a href="https://www.npmjs.com/package/html-minifier" target="_blank">html-minifier</a> <a href="https://www.npmjs.com/package/copy" target="_blank">copy</a> <a href="https://www.npmjs.com/package/imagemin" target="_blank">imagemin</a> <a href="https://www.npmjs.com/package/imagemin-cli" target="_blank">imagemin-cli</a> <a href="https://www.npmjs.com/package/imagemin-pngquant" target="_blank">imagemin-pngquant</a> <a href="https://www.npmjs.com/package/imagemin-jpeg-recompress" target="_blank">imagemin-jpeg-recompress</a> <a href="https://www.npmjs.com/package/imagemin-webp" target="_blank">imagemin-webp</a> <a href="https://www.npmjs.com/package/imagemin-svgo" target="_blank">imagemin-svgo</a> <a href="https://www.npmjs.com/package/imagemin-gifsicle" target="_blank">imagemin-gifsicle</a>
+					</small>
+				</p>
+				<h4>Herramientas Adicionales</h4>
+				<ul>
+					<small>
+						<li><a href="https://www.npmjs.com/browse/keyword/imageminplugin" target="_blank">Imagemin Plugins</a></li>
+						<li><a href="http://www.imagemagick.org/script/index.php" target="_blank">Image Magick</a></li>
+						<li><a href="http://www.imagemagick.org/script/mogrify.php" target="_blank">Mogrify</a></li>
+						<li><a href="https://www.npmjs.com/search?q=sprites" target="_blank">Paquetes para generar Sprites</a></li>
+						<li><a href="http://responsive-css.spritegen.com/" target="_blank">Responsive CSS Sprite Generator</a></li>
+					</small>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<h2>Workflow Back end</h2>
+				<img src="./img/npm-castores.svg" style="max-width: 50%;">
+			</section>
+			<section>
+				<h2>Workflow WordPress</h2>
+				<img src="./img/wordpress-logo.png" style="max-width: 20%; border: none; box-shadow: none;">
+				<article class="clear">
+					<div class="tres-columnas">
+						<p>Servidor</p>
+						<small>
+							<ul>
+								<li>Proxy</li>
+								<li>Recarga en vivo</li>
+								<li>Observar cambios<br>(php, css y js)</li>
+							</ul>
+						</small>
+					</div>
+					<div class="tres-columnas">
+						<p>CSS</p>
+						<small>
+							<ul>
+								<li>Concatenación</li>
+								<li>Prefijos</li>
+								<li>Minificación</li>
+								<li>Depuración</li>
+							</ul>
+						</small>
+					</div>
+					<div class="tres-columnas">
+						<p>JS</p>
+						<small>
+							<ul>
+								<li>Concatenación</li>
+								<li>Ofuscación</li>
+								<li>Minificación</li>
+							</ul>
+						</small>
+					</div>
+				</article>
+			</section>
+			<section>
+				<h2>WordPress con Gulp</h2>
+				<img src="./img/wp-gulp.png" style="max-width: 70%;">
+			</section>
+			<section>
+				<h4>Paquetes a usar</h4>
+				<p>
+					<small>
+						instálalos globalmente <b><code>npm i -g</code></b>&nbsp;&nbsp;&nbsp;y como dependencia de desarrollo <b><code>npm i -D</code></b>
+					</small>
+				</p>
+				<p>
+					<small>
+						<a href="https://www.npmjs.com/package/browser-sync" target="_blank">browser-sync</a> <a href="https://www.npmjs.com/package/gulp-cli" target="_blank">gulp-cli</a> <a href="https://www.npmjs.com/package/gulp" target="_blank">gulp</a> <a href="https://www.npmjs.com/package/gulp-sass" target="_blank">gulp-sass</a> <a href="https://www.npmjs.com/package/gulp-concat" target="_blank">gulp-concat</a> <a href="https://www.npmjs.com/package/gulp-uglify" target="_blank">gulp-uglify</a> <a href="https://www.npmjs.com/package/gulp-uncss" target="_blank">gulp-uncss</a> <a href="https://www.npmjs.com/package/gulp-autoprefixer" target="_blank">gulp-autoprefixer</a> <a href="https://www.npmjs.com/package/gulp-clean-css" target="_blank">gulp-clean-css</a>
+					</small>
+				</p>
+				<h4><a href="http://gulpjs.com/" target="_blank">Gulp</a></h4>
+				<ul>
+					<small>
+						<li><a href="https://frontendlabs.io/1669--gulp-js-en-espanol-tutorial-basico-primeros-pasos-y-ejemplos" target="_blank">Tutorial Básico y Primeros Pasos</a></li>
+						<li><a href="https://frontendlabs.io/1752--gulp-js-plugins-como-configurar-tareas" target="_blank">Plugins y Configuraciones Básicas</a></li>
+						<li><a href="https://ahmadawais.com/my-advanced-gulp-workflow-for-wordpress-themes/" target="_blank">Advanced Gulp Workflow for WordPress Themes</a></li>
+					</small>
+				</ul>
+			</section>
+			<section>
+				<h2>		WordPress con Scripts NPM</h2>
+				<img src="./img/wp-npm.png" style="max-width: 70%;">
+			</section>
+			<section>
+				<h4>Paquetes a usar</h4>
+				<p>
+					<small>
+						instálalos globalmente <b><code>npm i -g</code></b>&nbsp;&nbsp;&nbsp;y como dependencia de desarrollo <b><code>npm i -D</code></b>
+					</small>
+				</p>
+				<p>
+					<small>
+						<a href="https://www.npmjs.com/package/browser-sync" target="_blank">browser-sync</a> <a href="https://www.npmjs.com/package/node-sass" target="_blank">node-sass</a> <a href="https://www.npmjs.com/package/buildify" target="_blank">buildify</a> <a href="https://www.npmjs.com/package/onchange" target="_blank">onchange</a> <a href="https://www.npmjs.com/package/parallelshell" target="_blank">parallelshell</a> <a href="https://www.npmjs.com/package/postcss-cli" target="_blank">postcss-cli</a> <a href="https://www.npmjs.com/package/autoprefixer" target="_blank">autoprefixer</a> <a href="https://www.npmjs.com/package/uncss" target="_blank">uncss</a>
+					</small>
+				</p>
+			</section>
+			<section>
+				<h2>Muchas Gracias</h2>
+				<h3>
+					\<div class="carita">=D</div>/
+					¡Hasta la próxima!
+					\<div class="carita">=D</div>/
+				</h3>
+				<img src="./img/npm-castor-bye.png" style="max-width: 30%;">
+				<p>
+					<a href="http://twitter.com/jonmircha" target="_blank">@jonmircha</a>
+					/ 
+					<a href="mailto:jonmircha@gmail.com" target="_blank">jonmircha@gmail.com</a>
+					/ 
+					<a href="http://jonmircha.com" target="_blank">jonmircha.com</a>
+				</p>
+				<p><a href="#/">&lt;&lt; inicio</a></p>
+			</section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
