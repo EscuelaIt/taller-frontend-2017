@@ -1,0 +1,17 @@
+{
+  "name": "gulp-vs-npm",
+  "version": "1.0.0",
+  "description": "Ejercicio comparativo entre tareas gestionadas con gulp y scripts npm",
+  "main": "style.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"sass": "node-sass -w --output-style compressed ./style.scss ./style.css"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.0"
+  }
+}
