@@ -1,0 +1,39 @@
+{
+  "name": "npm-frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate de Automatización y Optimización de Tareas Front end con Scripts NPM",
+  "main": "package.json",
+  "scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"global:package": "npm i -g node-sass babel-cli babel-preset-latest pug pug-cli browser-sync parallelshell rimraf mkdirp uncss postcss-cli autoprefixer buildify useref useref-cli html-minifier copy imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle",
+		"dev:package": "npm i -D node-sass babel-cli babel-preset-latest pug pug-cli browser-sync parallelshell rimraf mkdirp uncss postcss-cli autoprefixer buildify useref useref-cli html-minifier copy imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle"
+  },
+  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-cli": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "buildify": "^0.4.0",
+    "copy": "^0.3.0",
+    "html-minifier": "^3.4.1",
+    "imagemin": "^5.2.2",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.2.0",
+    "imagemin-webp": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^3.0.0",
+    "pug": "^2.0.0-beta11",
+    "pug-cli": "^1.0.0-alpha6",
+    "rimraf": "^2.6.1",
+    "uncss": "^0.14.1",
+    "useref": "^1.2.0",
+    "useref-cli": "^1.0.0"
+  }
+}
