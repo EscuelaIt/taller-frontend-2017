@@ -1,0 +1,14 @@
+@import 'vars';
+
+html {
+	font-family:  $font-main;
+	font-size: $font-base;
+	background-color: $yellow;
+}
+
+a {
+	color: $yellow;
+	&:hover {
+		color: $blue-dark;
+	}
+}

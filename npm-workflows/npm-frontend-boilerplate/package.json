@@ -6,7 +6,12 @@
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"global:package": "npm i -g node-sass babel-cli babel-preset-latest pug pug-cli browser-sync parallelshell rimraf mkdirp uncss postcss-cli autoprefixer buildify useref useref-cli html-minifier copy imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle",
-		"dev:package": "npm i -D node-sass babel-cli babel-preset-latest pug pug-cli browser-sync parallelshell rimraf mkdirp uncss postcss-cli autoprefixer buildify useref useref-cli html-minifier copy imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle"
+		"dev:package": "npm i -D node-sass babel-cli babel-preset-latest pug pug-cli browser-sync parallelshell rimraf mkdirp uncss postcss-cli autoprefixer buildify useref useref-cli html-minifier copy imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle",
+		"sass": "node-sass -w -o ./src/css  ./src/scss",
+		"babel": "babel -w ./src/es6/ -d ./src/js/",
+		"pug": "pug -w -P -p ./src/pug/partials/ -O ./src/pug/options.json ./src/pug/templates/ -o ./src/",
+		"watch:metalang": "parallelshell \"npm run sass\" \"npm run pug\" \"npm run babel\""
+		
   },
   "author": "Jonathan MirCha <jonmircha@gmail.com>",
   "license": "MIT",
