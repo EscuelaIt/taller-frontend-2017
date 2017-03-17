@@ -15,6 +15,7 @@
 	}
 
 	let kenai = new Perro('kEnAi', 'firefox')
+	//kenai.ladrar()
 
 	console.log(html, head, body)
 })(document, window, navigator);

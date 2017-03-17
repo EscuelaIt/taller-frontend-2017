@@ -28,6 +28,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	}();
 
 	var kenai = new Perro('kEnAi', 'firefox');
+	//kenai.ladrar()
 
 	console.log(html, head, body);
 })(document, window, navigator);
