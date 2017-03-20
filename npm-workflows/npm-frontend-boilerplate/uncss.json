@@ -1,0 +1,23 @@
+{
+	"ignore": [
+    ".fa",
+    ".fa-facebook",
+		".fa-twitter",
+		".fa-wordpress",
+		".fa-youtube",
+		".fa-google-plus",
+		".fa-search",
+		".fa-calendar-o",
+		".fa-folder-open",
+		".fa-tag",
+		".fa-user"
+    ],
+    "stylesheets": [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0",
+		"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css",
+		"./css/style.css"
+    ],
+	"ignoreSheets": [
+		"https://fonts.googleapis.com/css?family=Pangolin"
+	]
+}
