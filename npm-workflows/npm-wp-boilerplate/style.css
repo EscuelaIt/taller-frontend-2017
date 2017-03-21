@@ -1,0 +1,571 @@
+/*
+Theme Name: Guau guau
+Theme URI: http://bextlan.com/dogs
+Description: Tema diseñado para mi sitio personal de perros
+Version: 2.0.0
+Author: Jonathan MirCha
+Author URI: http://jonmircha.com
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Tags: perros, canes, sabuesos, dogs, html5, wordpress, responsive design
+Text Domain: bextlan
+*/
+
+/* Style HTML Tags */
+
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-size: 16px;
+	background-color: #444;
+	color: #FFF;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body { overflow-x: hidden; }
+
+a {
+	color: greenyellow;
+	transition: all .3s ease-out;
+}
+
+a:hover { opacity: .75; }
+
+mark {
+	padding: .5rem;
+	color: #222;
+	background-color: greenyellow;
+}
+
+/* ***** Style Grids ***** */
+
+.xs-w100 { width: 100%; }
+
+.xs-w90 { width: 90%; }
+
+.xs-w80 { width: 80%; }
+
+.xs-w70 { width: 70%; }
+
+.xs-w60 { width: 60%; }
+
+.xs-w50 { width: 50%; }
+
+.xs-w40 { width: 40%; }
+
+.xs-w30 { width: 30%; }
+
+.xs-w20 { width: 20%; }
+
+.xs-w10 { width: 10%; }
+
+/* ***** Style Utilities ***** */
+
+.u-flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.u-flex-auto { flex: auto; }
+
+.u-flex-none { flex: none; }
+
+.u-wrap {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.u-bg-dark-gray { background-color: #222; }
+
+.u-bg-light-gray { background-color: #666; }
+
+.u-border { border: thin solid greenyellow; }
+
+.u-error {
+	padding: 1rem;
+	font-size: 2rem;
+	text-align: center;
+	color: #222;
+	background-color: greenyellow;
+}
+
+/* ***** Style Components ***** */
+
+.Header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 997;
+	width: 100%;
+	height: 4rem;
+	color: #FFF;
+}
+
+.Logo {
+	position: relative;
+	z-index: 998;
+	width: 100%;
+	height: 4rem;
+}
+
+.Logo-link {
+	display: block;
+	width: 4rem;
+	height: inherit;
+	text-indent: -999px;
+	background-image: url('img/perro.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 4rem;
+}
+
+.Panel {
+	position: fixed;
+	top: 4rem;
+	left: 0;
+	z-index: 996;
+	width: 100%;
+	max-height: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	transition: all .3s ease-out;
+	transform: translateY(-100vh);
+}
+
+.Panel.is-active {
+	padding-bottom: 4rem;
+	max-height: 100vh;
+	overflow-y: auto;
+	transform: translateY(0);
+}
+
+.Panel-button {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 999;
+	display: block;
+	width: 3rem;
+	height: .65rem;
+	padding: 1rem;
+	font-size: 1rem;
+	text-indent: 9999px;
+}
+
+.Panel-button:before {
+	content: ' ';
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	width: 1em;
+	height: .15em;
+	display: block;
+	font-size: 3em;
+	background-color: greenyellow;
+	border-radius: .15em;
+	box-shadow: 
+		0 .25em 0 greenyellow,
+		0 .5em 0 greenyellow;
+	transition: all .3s ease-out;
+}
+
+.Panel-button:hover:before {
+	background-color: #FFF;
+	border-radius: 0;
+	opacity: 1;
+	box-shadow: 
+		0 .25em 0 #FFF,
+		0 .5em 0 #FFF;
+	/* transform: rotate(360deg); */
+	/*transform: rotate(360deg) skew(-20deg);*/
+	transform: skew(-20deg);
+}
+
+.Panel-container { align-items: center; 	}
+
+.MenuMain { order: 1; }
+
+.MenuMain-listItem { 
+	border-top: thin solid greenyellow;
+	text-align: center;
+}
+
+.MenuMain li{
+	display: block;
+	margin: 0;
+	border-bottom: thin solid greenyellow;
+	list-style-type: none;
+}
+
+.MenuMain a {
+	display: block;
+	padding: 1rem;
+	font-weight: bold;
+	color: greenyellow;
+	transition: all .3s ease-out;
+}
+
+.MenuMain a:hover {
+	background-color: greenyellow;
+	color: #222;
+}
+
+.SearchBar {
+	border-top: thin solid greenyellow;
+	padding: 1rem;
+	text-align: center;
+}
+
+.SearchBar .screen-reader-text {
+	width: 1rem;
+	color: greenyellow;
+}
+
+.SearchBar input[type="search"] {
+	padding: .5rem;
+	width: calc(100% - 2rem);
+	opacity: 1;
+	border: none;
+	border-radius: .25rem;
+	outline: none;
+	transition: all .3s ease-out;
+}
+
+.SearchBar input[type="search"].is-animating { 
+	width: calc(100% - 2rem);
+	opacity: 1;
+}
+
+.SearchBar input[type="submit"] { display: none; }
+
+.MenuSocial {	
+	padding: 1rem;
+	text-align: center;
+}
+
+.MenuSocial li {
+	display: inline;
+	padding: 1rem;
+	list-style-type: none;
+}
+
+.Main {
+	max-width: 1200px;
+	margin: auto;
+	padding-top: 4rem;
+	background-color: #EEE;
+}
+
+.Template-title {
+	padding: 1rem;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.Main-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.PostCard,
+.Post-header {
+	width: 100%;
+	height: 40vh;
+	flex: auto;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	filter: grayscale(1);
+	transition: all .3s ease-out;
+}
+
+.PostCard:hover,
+.Post-header { filter: grayscale(0); }
+
+.PostCard:nth-child(3n+1) { width: 100%; }
+
+.PostCard-link,
+.Post-headerContainer {
+	width: 100%;
+	height: inherit;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, .5);
+	
+}
+
+.PostCard-title {
+	padding: 0;
+	transition: all .3s ease-out;
+}
+
+.PostCard-link:hover .PostCard-title {
+	padding: 2rem;
+	background-color: rgba(0, 0, 0, .75);
+}
+
+.Post-headerTitle {
+	font-size: 7.5vw;
+	padding: 2rem;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.Post-content {
+	width: 100%;
+	padding: 1rem;
+	background-color: #333;
+}
+
+.Post-content > * { padding: 1rem; }
+
+.Post-content img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.YoutubeVideo {
+	max-width: 80%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.YoutubeVideo-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+.YoutubeVideo iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.Post-info {
+	width: 100%;
+	padding: 1rem;
+	background-color: #555;
+}
+
+.Post-info > * { padding: .5rem; }
+
+.Comments { padding: 1rem; }
+
+.Comments form > * { padding: .5rem; }
+
+.Comments input,
+.Comments textarea {
+	display: block;
+	margin: auto;
+	padding: .25rem;
+	width: 100%;
+}
+
+.Comments input[type="submit"] {
+	width: 50%;
+	border: 0;
+	outline: 0;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: greenyellow;
+	transition: all .3s ease-out;
+}
+
+.Comments input[type="submit"]:hover {
+	background-color: #222;
+	color: greenyellow;
+	border: thin solid greenyellow
+}
+
+.AuthorCard {
+	padding: 1rem;
+	text-align: center;
+}
+
+/* ***** Style WordPress ***** */
+
+.sub-menu { font-size: .75rem; }
+
+.sub-menu li { border: 0; }
+
+.wp-pagenavi {
+	padding: 1rem;
+	text-align: center;
+}
+
+.wp-pagenavi .pages {
+	display: block;
+	width: 50%;
+	margin: 0 auto 1rem;
+	border: 0;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi .current {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 .25rem;
+}
+
+.wp-pagenavi a:hover {
+	background-color: greenyellow;
+	color: #222;
+}
+
+.wp-pagenavi .current {
+	font-size: 1.5rem;
+	border: 0;
+}
+
+.avatar {
+	border: medium solid greenyellow;
+	border-radius: 100%;
+}
+
+.arve-wrapper { margin: auto; }
+
+@media screen and (min-width: 64em) {
+	.lg-w100 { width: 100%; }
+
+	.lg-w90 { width: 90%; }
+
+	.lg-w80 { width: 80%; }
+
+	.lg-w70 { width: 70%; }
+
+	.lg-w60 { width: 60%; }
+
+	.lg-w50 { width: 50%; }
+
+	.lg-w40 { width: 40%; }
+
+	.lg-w30 { width: 30%; }
+
+	.lg-w20 { width: 20%; }
+
+	.lg-w10 { width: 10%; }
+
+	.Logo {
+		width: 4rem;
+		flex: none;
+	}
+
+	.Panel {
+		position: static;
+		top: 0;
+		flex: none;
+		width: calc(100% - 4rem);
+		max-height: none;
+		overflow: visible;
+		transition: none;
+		transform: translateY(0);
+	}
+	
+	.Panel-button { display: none; }
+
+	.MenuMain { order: 0; }
+
+	.MenuMain-listItem { border: 0; }
+
+	.MenuMain li{
+		display: inline;
+		border: 0;
+	}
+
+	.MenuMain a { 
+		display: inline;
+		padding: .75rem;
+	}
+
+	.MenuMain a:hover { 
+		color: #FFF;
+		background-color: transparent;
+	}
+
+	.SearchBar {
+		border-top: none;
+		order: -1;
+	}
+
+	.SearchBar .screen-reader-text {
+		font-size: 1.25rem;
+		cursor: pointer;
+	}
+
+	.SearchBar input[type="search"] { 
+		width: 0;
+		opacity: 0;
+	}
+
+	.MenuSocial { padding: 0; }
+
+	.MenuSocial li { padding: .5rem; }
+
+	.menu-item-has-children { position: relative; }
+	
+	.menu-item-has-children:hover .sub-menu { 
+		z-index: 999;
+		display: block;
+		opacity: 1;
+	}
+
+	.sub-menu {
+		position: absolute;
+		top: 1rem;
+		left: .75rem;
+		z-index: -1;
+		display: none;
+		background-color: #222;
+		opacity: 0;
+		transition: all.3s ease-out;
+ 	}
+
+ 	.sub-menu a {
+ 		display: block;
+		padding: 1rem;
+		transition: all.3s ease-out;
+ 	}
+
+ 	.sub-menu a:hover {
+ 		color: #222;
+		background-color: greenyellow;
+ 	}
+
+ 	.PostCard { width: 50%; }
+
+ 	.Post-headerTitle { font-size: 3rem; }
+
+ 	.wp-pagenavi a,
+ 	.wp-pagenavi .current {
+		margin: 0 .5rem;
+		font-size: 1.5rem;
+	}
+
+	.wp-pagenavi .current { font-size: 3rem; }
+}

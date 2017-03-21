@@ -1,0 +1,23 @@
+{
+  "name": "gulp-wp-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate de Automatización y Optimización de Tareas Front end en WordPress con Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"global:package": "npm i -g gulp-cli browser-sync",
+    "dev:package": "npm i -D browser-sync gulp gulp-sass gulp-concat gulp-uglify gulp-uncss gulp-autoprefixer gulp-clean-css"
+  },
+  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-uncss": "^1.0.6"
+  }
+}

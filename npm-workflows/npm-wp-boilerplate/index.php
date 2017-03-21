@@ -1,0 +1,5 @@
+<?php
+get_header();
+get_template_part('conditional-tags');
+get_template_part('content');
+get_footer();

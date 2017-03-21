@@ -1,0 +1,45 @@
+{
+  "name": "npm-wp-boilerplate",
+  "version": "1.0.0",
+  "description": "Theme designed to start projects in WordPress optimized with NPM Scripts",
+  "main": "package.json",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/jonmircha/npm-wp-boilerplate.git"
+  },
+  "scripts": {
+    "global:package": "npm i -g browser-sync node-sass buildify onchange parallelshell postcss-cli autoprefixer uncss imagemin imagemin-cli imagemin-pngquant imagemin-jpeg-recompress imagemin-webp imagemin-svgo imagemin-gifsicle",
+    "dev:package": "npm i -D browser-sync node-sass buildify onchange parallelshell postcss-cli autoprefixer uncss",
+    "dev:proxy": "browser-sync start --proxy localhost --startPath dogs --files \"./**\" --reload-delay=300 --reload-debounce=500",
+    "sass": "node-sass -w -o ./css/ ./scss/",
+    "build:css": "node buildify css",
+    "build:js": "node buildify js",
+    "watch:css": "onchange ./css -- npm run build:css",
+    "watch:js": "onchange ./js -- npm run build:js",
+    "watch:wp": "parallelshell \"npm run dev:proxy\" \"npm run sass\" \"npm run watch:css\" \"npm run watch:js\"",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers \"> 5%, ie 10\" -r ./style.css",
+    "cssmin": "node buildify cssmin",
+    "optim:css": "npm run cssmin && npm run autoprefixer",
+    "uncss": "uncss -u uncss.json \"./**/*.php\" > ./styleun.css",
+    "uncssmin": "node buildify uncssmin",
+    "optim:uncss": "npm run uncss && npm run uncssmin && npm run autoprefixer",
+	  "imagemin": "imagemin \"./imgsrc/*.+(jpg|png)\" -o ./img/ -p=pngquant -p=jpeg-recompress",
+    "webp": "imagemin \"./imgsrc/*.jpg\" -o ./img/ -p=webp",
+    "svgmin": "imagemin \"./imgsrc/*.svg\" -o ./img/ -p=svgo",
+    "gifmin": "imagemin \"./imgsrc/*.gif\" -o ./img/ -p=gifsicle",
+    "jpgresize": "mogrify -resize \"1024 >\" ./img/*.jpg",
+    "pngresize": "mogrify -resize \"1024 >\" ./img/*.png"
+  },
+  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.7.4",
+    "browser-sync": "^2.18.8",
+    "buildify": "^0.4.0",
+    "node-sass": "^4.5.0",
+    "onchange": "^3.2.1",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^3.0.0-beta",
+    "uncss": "^0.14.1"
+  }
+}
